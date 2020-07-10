@@ -52,7 +52,7 @@ public class Controller {
                 response = "wrong command";
             }
         }else if(command[0].equals("/status")){
-            response = "\n --status--\navailable licences: "+LicenceCheckerServerApplication.availableLicences.toString()+"\nactivated licences: "+LicenceCheckerServerApplication.licenses.toString();
+            response = "\n <p>--status--</p>\n<p>available licences: "+LicenceCheckerServerApplication.availableLicences.toString()+"</p>\n<p>activated licences: "+LicenceCheckerServerApplication.licenses.toString()+"</p>";
         }else{
             response = "wrong command length";
         }
