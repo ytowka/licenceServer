@@ -40,4 +40,22 @@ public class Controller {
         String pageText = "running...";
         return pageText;
     }
+    @GetMapping("/commands")
+    public String response(@RequestParam("c")String commandLine){
+        String[] command = commandLine.split(" ");
+        String response = "";
+        if(command.length == 2){
+            if(command[0].equals("/add")){
+                LicenceCheckerServerApplication.availableLicences.add(command[1]);
+                response = "added licence: "+command[1];
+            }else if(command[0].equals("/status")){
+                response = "\n --status--\navailable licences: "+LicenceCheckerServerApplication.availableLicences.toString()+"\nactivated licences: "+LicenceCheckerServerApplication.licenses.toString();
+            }else{
+                response = "wrong command";
+            }
+        }else{
+            response = "wrong command length";
+        }
+        return LicenceCheckerServerApplication.console+response+"\n";
+    }
 }

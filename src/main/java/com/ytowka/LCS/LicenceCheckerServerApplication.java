@@ -12,11 +12,14 @@ import java.util.Set;
 public class LicenceCheckerServerApplication {
 	public static ArrayList<String> availableLicences;
 	public static HashMap<String,String> licenses;
+	public static String console = "--console-- \n";
 
-	public static void main(String[] args) {ad
+	public static void main(String[] args) {
 		SpringApplication.run(LicenceCheckerServerApplication.class, args);
 		availableLicences = new ArrayList<>();
 		licenses = new HashMap<>();
+
+		availableLicences.add("ytowka");
 
 		//new Thread(() -> {
 		//	Scanner in = new Scanner(System.in);
