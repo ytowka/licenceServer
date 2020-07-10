@@ -35,4 +35,9 @@ public class Controller {
         System.out.println("\n --check-- \n config:\nkey: "+cfg.key+"\nsignature: "+cfg.signature+"\nresult: "+response.status);
         return response;
     }
+    @GetMapping("/")
+    public String page(){
+        String pageText = "running...";
+        return pageText;
+    }
 }
