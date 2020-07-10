@@ -17,11 +17,12 @@ public class LicenceCheckerServerApplication {
 		SpringApplication.run(LicenceCheckerServerApplication.class, args);
 		availableLicences = new ArrayList<>();
 		licenses = new HashMap<>();
+
 		new Thread(() -> {
 			Scanner in = new Scanner(System.in);
 			while (true){
 				availableLicences.add(in.nextLine());
-				System.out.println("\n "+availableLicences.toString()+"\n"+licenses.toString());
+				System.out.println("\n avaible Licences: "+availableLicences.toString()+"\n activated licences: "+licenses.toString());
 			}
 		}).start();
 	}
