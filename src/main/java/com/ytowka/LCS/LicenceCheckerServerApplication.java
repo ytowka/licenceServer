@@ -19,8 +19,6 @@ public class LicenceCheckerServerApplication {
 		availableLicences = new ArrayList<>();
 		licenses = new HashMap<>();
 
-		availableLicences.add("ytowka");
-
 		//new Thread(() -> {
 		//	Scanner in = new Scanner(System.in);
 		//	while (true){

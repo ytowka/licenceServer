@@ -48,14 +48,15 @@ public class Controller {
             if(command[0].equals("/add")){
                 LicenceCheckerServerApplication.availableLicences.add(command[1]);
                 response = "added licence: "+command[1];
-            }else if(command[0].equals("/status")){
-                response = "\n --status--\navailable licences: "+LicenceCheckerServerApplication.availableLicences.toString()+"\nactivated licences: "+LicenceCheckerServerApplication.licenses.toString();
             }else{
                 response = "wrong command";
             }
+        }else if(command[0].equals("/status")){
+            response = "\n --status--\navailable licences: "+LicenceCheckerServerApplication.availableLicences.toString()+"\nactivated licences: "+LicenceCheckerServerApplication.licenses.toString();
         }else{
             response = "wrong command length";
         }
-        return LicenceCheckerServerApplication.console+response+"\n";
+        LicenceCheckerServerApplication.console+=response+"\n";
+        return LicenceCheckerServerApplication.console;
     }
 }
